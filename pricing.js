@@ -10,9 +10,9 @@
 window.NALBAKI_PRICING = {
   currency: 'USD',
   packages: {
-    playable: { price: 380, days: 5, unit: 'per playable' },
-    portal: { price: 400, days: 5, unit: 'per game' },
-    game: { price: 900, days: 10, unit: 'fixed price' },
-    webgl: { price: 300, days: 5, unit: 'per sprint' },
+    playable: { price: 249, days: 5, unit: 'per playable' },
+    portal: { price: 229, days: 5, unit: 'per game' },
+    game: { price: 599, days: 10, unit: 'fixed price' },
+    webgl: { price: 199, days: 5, unit: 'per sprint' },
   },
 };

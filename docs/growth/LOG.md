@@ -19,3 +19,9 @@ Choices: LCS title uses the 54-char fallback (the 63-char version exceeds the 60
 Open TODOs (HTML comments on each page): Controls blocks omitted (unverified); LCS genre wording (PLAN said confirm; "Battle royale" used, games.html still says "Top-down"); LCS "coming soon" friend rooms must change when true; Floor 42 invite-link behaviour unverified; Floor 42 / LCS FAQ answers are drawn only from games.html and support.html.
 Checks: no build/lint/test exists (static site). All JSON-LD blocks parse as JSON; sitemap parses as XML; titles <=60 and unique, descriptions 120-160 (asserted in generator); one h1 per page; every referenced local asset exists. Not run: Rich Results Test / validator.schema.org (needs live URL), live 200 + canonical checks (not deployed). Google has no dedicated VideoGame rich result for ordinary pages; value is entity clarity, effect uncertain.
 Not touched: P1/P2 items (home/games titles, hero paragraph, alt text on existing pages, llms.txt), game-host repos, manual steps.
+
+## 2026-11-21 - Upwork profile rewrite (game-search-growth)
+- Wrote `upwork-shots/PROFILE.md` (title, 2 specialized profiles, overview, hourly rate plan, 4 catalog projects x 3 tiers, skills, portfolio order, open questions) and `upwork-shots/CHROME_PROFILE_TASK.md` (step-by-step for Claude in Chrome, stops before every save).
+- Assumption marked: current prices = pricing.js (playable 380, portal 400, game 900, WebGL 300); live profile not visible. Real hourly rate unknown.
+- Research: Upwork help pages (title 70 chars, niche title, hook first, catalog max 3 tiers Starter/Standard/Advanced). Unverified: 200-250 char preview, 5,000 char overview limit, calendar-day delivery, "raise after ~5 reviews".
+- No site or code files changed; pricing.js untouched; nothing posted.
