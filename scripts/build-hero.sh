@@ -14,7 +14,7 @@ LCS_SRC="${LCS_SRC:-$CG/last-commit-standing/last-commit-standing-site-hero-1920
 PL_SRC="${PL_SRC:-$v/parking-lot-1080.mp4}"
 XF=0.5
 # cut list: source:start:duration (seconds)
-CUTS=("$F42_SRC:0.0:3.4" "$LCS_SRC:2.2:3.2" "$F42_SRC:5.6:3.2" "$LCS_SRC:6.0:3.0" "$PL_SRC:3.0:1.6")
+CUTS=("$F42_SRC:0.0:3.4" "$LCS_SRC:1.0:3.2" "$F42_SRC:5.6:3.2" "$LCS_SRC:6.0:3.0" "$PL_SRC:3.0:1.6")
 FPS=30
 tmp="$(mktemp -d)"; i=0
 for c in "${CUTS[@]}"; do
@@ -22,7 +22,11 @@ for c in "${CUTS[@]}"; do
   ffmpeg -v error -y -ss "$ss" -t "$d" -i "$f" -an -vf "fps=$FPS,scale=1920:1080:flags=lanczos,setsar=1,format=yuv420p" -c:v libx264 -preset fast -crf 12 "$tmp/c$i.mp4"
   echo "file 'c$i.mp4'" >> "$tmp/list.txt"; i=$((i+1))
 done
-ffmpeg -v error -y -f concat -safe 0 -i "$tmp/list.txt" -c copy "$tmp/body.mp4"
+# Join with the concat filter (re-encode), not stream copy: clips from different sources differ in colour metadata and a
+# copied concat decodes only the first part.
+inputs=(); fc=""; for ((k=0;k<i;k++)); do inputs+=(-i "$tmp/c$k.mp4"); fc+="[$k:v]setpts=PTS-STARTPTS,format=yuv420p[v$k];"; done
+for ((k=0;k<i;k++)); do fc+="[v$k]"; done
+ffmpeg -v error -y "${inputs[@]}" -filter_complex "${fc}concat=n=$i:v=1:a=0[o]" -map "[o]" -an -c:v libx264 -preset fast -crf 12 "$tmp/body.mp4"
 T=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$tmp/body.mp4")
 E=$(echo "$T - $XF" | bc -l)
 ffmpeg -v error -y -i "$tmp/body.mp4" -filter_complex \
