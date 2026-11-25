@@ -314,7 +314,7 @@
   if (stats && /(^|\.)nalbakigames\.com$/.test(location.hostname)) {
     stats.init({ endpoint: 'https://stats.nalbakigames.com/v1/b', game: 'site', build: 'site-1' });
     stats.track('page_view', { path: location.pathname });
-    const GAMES = { 'parkinglot.nalbakigames.com': 'parking-lot', 'lastcommit.nalbakigames.com': 'lcs', 'floor42.nalbakigames.com': 'floor-42' };
+    const GAMES = { 'parkinglot.nalbakigames.com': 'parking-lot', 'hazefall.nalbakigames.com': 'lcs', 'floor42.nalbakigames.com': 'floor-42' };
     const whereOf = (a) => {
       const marked = a.closest('[data-where]');
       if (marked) return marked.dataset.where;
