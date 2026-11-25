@@ -4,7 +4,9 @@
   "trailingSlash": false,
   "redirects": [
     { "source": "/donate", "destination": "/support", "permanent": true },
-    { "source": "/donate.html", "destination": "/support", "permanent": true }
+    { "source": "/donate.html", "destination": "/support", "permanent": true },
+    { "source": "/games/last-commit-standing", "destination": "/games/hazefall", "permanent": true },
+    { "source": "/games/last-commit-standing.html", "destination": "/games/hazefall", "permanent": true }
   ],
   "headers": [
     {

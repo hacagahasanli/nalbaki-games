@@ -10,7 +10,7 @@ Plain HTML, CSS and a few lines of JS. No build step, no dependencies.
 | Path | File | What it is |
 | --- | --- | --- |
 | `/` | `index.html` | "One more round" hero over looping gameplay with a game-select row, featured Parking Lot, full-bleed key art chapter per game, the studio, house rules, hire |
-| `/games` | `games.html` | Parking Lot, Last Commit Standing, Floor 42: real gameplay clips, how a round plays, play links |
+| `/games` | `games.html` | Parking Lot, Hazefall, Floor 42: real gameplay clips, how a round plays, play links |
 | `/services` | `services.html` | Four fixed-price packages with scope; prices come from `pricing.js` |
 | `/work` | `work.html` | Case studies; every number lists its source |
 | `/playables` | `playables.html` | Three live playable ads in phone frames (builds in `assets/playables/`, styles and loader in `playables.css` and `playables.js`); numbers from each playable repo's size and verify reports |
@@ -46,7 +46,7 @@ directory `.`), then add `nalbakigames.com` and `www.nalbakigames.com` under Set
 
 The mark is a heavy, slanted N cut by a single slash; the wordmark is NALBAKI GAMES in Bricolage Grotesque, heavy and
 slanted. Colours: signal orange `#FF4D2E`, night `#0B0C10`, bone `#F2EFE8`; each game keeps its own accent (Parking Lot
-yellow, Last Commit Standing green, Floor 42 gold). Text on orange is always the dark night colour (white fails contrast).
+yellow, Hazefall green, Floor 42 gold). Text on orange is always the dark night colour (white fails contrast).
 
 - `assets/brand/`: SVG logo lockups (`-on-dark`, `-on-light`, `-mono-light`, `-mono-dark`), wordmarks, the mark in
   orange, light and dark, the app icon (orange chamfered tile), the square tile and a 512 px avatar PNG.
@@ -58,7 +58,7 @@ yellow, Last Commit Standing green, Floor 42 gold). Text on orange is always the
 ## Key art and clips
 
 `assets/img/ka-*.{avif,webp}` (960, 1600, 2560 px) are frames captured from the games running locally at 2x:
-Parking Lot from its cover camera rig, Last Commit Standing from the parachute drop over the farm (seeded solo round),
+Parking Lot from its cover camera rig, Hazefall from the parachute drop over the farm (seeded solo round),
 Floor 42 from a bot-against-bot match (a rocket across the office). `assets/img/card-*-960.{avif,webp}` are tighter
 crops of the same frames for the home page game cards. Titled 2560x1440 versions are in `assets/press/keyart-*.jpg`.
 
