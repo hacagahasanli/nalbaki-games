@@ -45,7 +45,7 @@ AI prompts: "What is a free browser parking game where you race other cars to th
 AI prompts: "Best free battle royale games that run in a browser", "Is there a battle royale I can play on my phone without downloading?", "What is Last Commit Standing?"
 Note: do not claim multiplayer rooms; copy says "rooms with friends coming soon" (games.html:158).
 
-## Floor 42 (1v1 office shootout, bot or online, first to five KOs)
+## Floor 42 (1v1 office shootout, bot or online, first to five KOs) - SUPERSEDED 2026-11-28: the game is now Pewfield, see PEWFIELD-RENAME.md section 8
 | Query | Intent | Owner | Notes |
 |---|---|---|---|
 | 1v1 shooting game browser | play | LP /games/floor-42 | High competition; online 1v1 is the angle. |

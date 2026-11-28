@@ -25,3 +25,11 @@ Not touched: P1/P2 items (home/games titles, hero paragraph, alt text on existin
 - Assumption marked: current prices = pricing.js (playable 380, portal 400, game 900, WebGL 300); live profile not visible. Real hourly rate unknown.
 - Research: Upwork help pages (title 70 chars, niche title, hook first, catalog max 3 tiers Starter/Standard/Advanced). Unverified: 200-250 char preview, 5,000 char overview limit, calendar-day delivery, "raise after ~5 reviews".
 - No site or code files changed; pricing.js untouched; nothing posted.
+
+## 2026-11-28 - Pewfield rename spec (game-search-growth)
+- Wrote `PEWFIELD-RENAME.md`: every site file that mentions Floor 42 (grep), exact titles, meta descriptions, h1, OG, VideoGame + Breadcrumb JSON-LD (`alternateName: "Floor 42"`), FAQ, controls, alt text, sitemap, `vercel.json` 301s, game-host move, Next metadata items E-1..E-9, asset requests R-A0..R-V1, keyword research.
+- Verified live (curl/dig): floor42 host still serves the Floor 42 build (`portal-build` 116 commits ahead of `main`, unpushed); `floor42-game.fly.dev` HTTP 000 twice, so the spec removes live-online claims (ONLINE-OFF default); lastcommit -> hazefall is a Vercel domain-level 308 that keeps path and query; DNS on Cloudflare, game hosts are DNS-only CNAMEs to Vercel; pewfield. not yet resolving.
+- Keyword evidence: Google autocomplete (US, en) for 12 seeds; `pewfield` has no suggestions and WebSearch finds no game with the name; CrazyGames categories 2-player / shooting / gun exist, 1v1 does not. No volumes (no tool): all size/difficulty notes are [Estimate].
+- Not found: `floor-42/docs/collab/CREATIVE/brand/crazygames-store.md` (R-029 still open), so player-facing lines are marked [align with CD copy].
+- Found on the way: services.html says Hazefall has online rooms, hazefall.html FAQ says not yet (flagged, not fixed).
+- No HTML or code edited, nothing posted or submitted.
