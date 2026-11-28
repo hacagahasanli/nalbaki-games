@@ -120,7 +120,7 @@ export const selectionStatus = (tier, amount, provider) => {
 
 /** What support pays for: three honest lines. */
 export const PAYS = Object.freeze([
-  { id: 'servers', title: 'Servers', line: 'for quick online duels in Floor 42, and Last Commit Standing rooms next.', short: 'for quick online duels' },
+  { id: 'servers', title: 'Servers', line: `to switch Pewfield's online duels back on, and for Hazefall rooms.`, short: 'for online duels' },
   { id: 'games', title: 'New games', line: 'from the first sketch to the first round you can play.', short: 'from sketch to playable' },
   { id: 'polish', title: 'Late-night polish', line: 'on the bugs and little details that make you hit Play again.', short: 'on the little details' },
 ]);

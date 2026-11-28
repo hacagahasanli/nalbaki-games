@@ -784,6 +784,20 @@ body.home .site-head:not(.is-scrolled) {
   transform: none;
   transition: none;
 }
+/* Pewfield's logo is 2.25:1 (the old Floor 42 one was 4:1): size it by height so it is as tall as the other game logos */
+.game-logo.pf,
+.keyart .ka-inner img.game-logo.pf,
+.js .keyart .ka-inner img.game-logo.pf {
+  width: auto;
+  height: clamp(96px, 10vw, 150px);
+  max-width: 100%;
+}
+/* PEW! FIELD's lettering sits in a squarer lock-up, so it needs a taller box to read at the size of the other names */
+.pick.f42 .p-body img.pick-logo,
+.pick.f42:hover .p-body img.pick-logo,
+.pick.f42:focus-visible .p-body img.pick-logo {
+  height: clamp(46px, 4.6vw, 66px);
+}
 .pick .p-body img.pick-logo,
 .pick:hover .p-body img.pick-logo,
 .pick:focus-visible .p-body img.pick-logo {
@@ -819,6 +833,11 @@ body.home .site-head:not(.is-scrolled) {
 }
 .details.flip {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+}
+/* a chapter with no clip yet (Pewfield until its gameplay video exists): one text column */
+.details.solo {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: calc(860px + 2 * var(--gutter));
 }
 .details.flip > :first-child {
   order: 2;

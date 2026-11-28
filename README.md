@@ -10,7 +10,8 @@ Plain HTML, CSS and a few lines of JS. No build step, no dependencies.
 | Path | File | What it is |
 | --- | --- | --- |
 | `/` | `index.html` | "One more round" hero over looping gameplay with a game-select row, featured Parking Lot, full-bleed key art chapter per game, the studio, house rules, hire |
-| `/games` | `games.html` | Parking Lot, Hazefall, Floor 42: real gameplay clips, how a round plays, play links |
+| `/games` | `games.html` | Parking Lot, Hazefall, Pewfield: real gameplay clips, how a round plays, play links |
+| `/games/<slug>` | `games/*.html` | One page per game (parking-lot, hazefall, pewfield): summary, facts, FAQ, VideoGame data. Old slugs 301 in vercel.json |
 | `/services` | `services.html` | Four fixed-price packages with scope; prices come from `pricing.js` |
 | `/work` | `work.html` | Case studies; every number lists its source |
 | `/playables` | `playables.html` | Three live playable ads in phone frames (builds in `assets/playables/`, styles and loader in `playables.css` and `playables.js`); numbers from each playable repo's size and verify reports |
@@ -39,14 +40,14 @@ npx serve .          # http://localhost:3000, clean URLs (/games serves games.ht
 ## Deploy (Vercel)
 
 `vercel.json` turns on clean URLs, caches `/assets` for 30 days, adds basic security headers and redirects the old
-`/donate.html` to `/`. Import the repo in Vercel as a static site (framework preset "Other", no build command, output
+`/donate.html` to `/`, and redirects /games/last-commit-standing and /games/floor-42 to the renamed pages. Import the repo in Vercel as a static site (framework preset "Other", no build command, output
 directory `.`), then add `nalbakigames.com` and `www.nalbakigames.com` under Settings > Domains.
 
 ## Brand
 
 The mark is a heavy, slanted N cut by a single slash; the wordmark is NALBAKI GAMES in Bricolage Grotesque, heavy and
 slanted. Colours: signal orange `#FF4D2E`, night `#0B0C10`, bone `#F2EFE8`; each game keeps its own accent (Parking Lot
-yellow, Hazefall green, Floor 42 gold). Text on orange is always the dark night colour (white fails contrast).
+yellow, Hazefall green, Pewfield gold). Text on orange is always the dark night colour (white fails contrast).
 
 - `assets/brand/`: SVG logo lockups (`-on-dark`, `-on-light`, `-mono-light`, `-mono-dark`), wordmarks, the mark in
   orange, light and dark, the app icon (orange chamfered tile), the square tile and a 512 px avatar PNG.
@@ -59,15 +60,17 @@ yellow, Hazefall green, Floor 42 gold). Text on orange is always the dark night 
 
 `assets/img/ka-*.{avif,webp}` (960, 1600, 2560 px) are frames captured from the games running locally at 2x:
 Parking Lot from its cover camera rig, Hazefall from the parachute drop over the farm (seeded solo round),
-Floor 42 from a bot-against-bot match (a rocket across the office). `assets/img/card-*-960.{avif,webp}` are tighter
-crops of the same frames for the home page game cards. Titled 2560x1440 versions are in `assets/press/keyart-*.jpg`.
+Pewfield (called Floor 42 until November 2026) from a real bot-against-bot frame on OFFSITE (Creative Director set,
+`brand/pewfield/site/`; its home card uses `ka-pewfield-960`). `assets/img/card-*-960.{avif,webp}` are tighter
+crops of the same frames for the home page game cards. Pewfield has no gameplay clip yet; the home hero loop
+(`hero-v2-*`) is Hazefall and Parking Lot only until one exists. Titled 2560x1440 versions are in `assets/press/keyart-*.jpg`.
 
 The gameplay clips are recorded frame by frame: each game runs in Chrome on virtual time (requestAnimationFrame,
 `performance.now` and `Date.now` advance 1/60 s per frame, with `Math.random` seeded), every frame is screenshotted
 at 1920x1080 and the frames are encoded afterwards, so the footage is smooth whatever the machine. HUD text is hidden.
 Each game has `assets/video/<game>-1080.{webm,mp4}` (60 fps) and `<game>-720.{webm,mp4}` (30 fps, for phones):
 VP9 two-pass and H.264 High CRF 20, 12-15 s, silent, with a poster `assets/img/<game>-poster-1280.webp` from the same
-footage. `assets/video/hero-*` is the home page's gameplay loop; it loads after the page.
+footage. `assets/video/hero-v2-*` (built by `scripts/build-hero.sh`) is the home page's gameplay loop; it loads after the page.
 
 ## Files
 

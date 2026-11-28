@@ -33,3 +33,12 @@ Not touched: P1/P2 items (home/games titles, hero paragraph, alt text on existin
 - Not found: `floor-42/docs/collab/CREATIVE/brand/crazygames-store.md` (R-029 still open), so player-facing lines are marked [align with CD copy].
 - Found on the way: services.html says Hazefall has online rooms, hazefall.html FAQ says not yet (flagged, not fixed).
 - No HTML or code edited, nothing posted or submitted.
+
+## 2026-11-28 - Pewfield rename implemented on the site (engineering, branch `pewfield-rename`, not pushed)
+- Implemented PEWFIELD-RENAME.md sections 3.1-3.12 under ONLINE-OFF, with player-facing copy from `floor-42/docs/collab/CREATIVE/brand/crazygames-store.md` (CD wins on wording: lead, hook, desc, controls, weapon names "sniper rail"/"rockets", card tagline "1v1 duel · bot or 2 players") and art from `brand/pewfield/site/` (INTEGRATE.md).
+- `games/floor-42.html` -> `games/pewfield.html` (git mv); title 58, description 157, one h1, canonical, VideoGame (`alternateName: "Floor 42"`, `numberOfPlayers` 1-2, image = keyart-pewfield) + BreadcrumbList parse; Controls block added; FAQ without the online item. `vercel.json`: /games/floor-42 and .html -> /games/pewfield (308 checked on a local server that applies the redirects).
+- Hero montage re-cut without the old office footage (`hero-v2-*`, `scripts/build-hero.sh` takes NAME and starts on Parking Lot); the Hazefall source clip has blocky sky artefacts from ~1.5 s (pre-existing, also in the live Hazefall clip).
+- Removed (archived to `games-studio/_archive/2026-11/nalbaki-games-floor-42-assets/`): every old Floor 42 image, clip, press file, logo and the old hero. Chapters on / and /games have no clip until a Pewfield video exists (R-V1).
+- Deliberately left: 11 `og:image:alt` lines + `assets/og.jpg` (studio share image still shows a FLOOR 42 tile with the old office; R-A5 for the CD), the Floor 42 playable sample on /playables (spec 3.8: kept and labelled "Floor 42 (now Pewfield)"; it still shows Hotfix/Legacy in the office).
+- Checks: 140 local URLs from every page return 200; no 4xx, JS errors, broken images or horizontal overflow at 1280x800 and 390x844; pewfield.nalbakigames.com `/` and `/characters` return 200 with the Pewfield title (public DNS; the local resolver had not picked the host up yet). Screenshots: `docs/growth/shots/pewfield-rename/` (not committed, 26 MB).
+- Sitemap lastmod set to 2026-11-28; bump to the real deploy date if it ships later.

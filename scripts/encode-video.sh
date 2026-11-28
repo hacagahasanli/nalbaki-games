@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Encode one gameplay clip for the site: <name>-1080 and <name>-720 as mp4 (H.264) and webm (VP9), plus a webp poster.
 # Usage: scripts/encode-video.sh <source.mp4> <name> [poster-second]
-#   scripts/encode-video.sh ~/Desktop/projects/games-studio/crazygames/videos/floor-42/floor-42-site-hero-1920x1080.mp4 floor-42 4
+#   scripts/encode-video.sh ~/Desktop/projects/games-studio/crazygames/videos/pewfield/pewfield-site-hero-1920x1080.mp4 pewfield 4
 # Never upscales: a 1280-wide source gets no 1080 variant.
 # Needs ffmpeg and node with sharp (set SHARP=/path/to/node_modules/sharp if it is not installed here).
 set -euo pipefail
